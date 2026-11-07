@@ -1,0 +1,323 @@
+/* =====================================================================
+   WEDDING INVITATION — FIRA & SODIK
+   animations.css — Keyframes, Scroll Reveal, Petals, Parallax
+   ===================================================================== */
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+
+/* Loading animations */
+@keyframes loadingPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(0.97); }
+}
+
+@keyframes loadingBar {
+  0%   { width: 0%; }
+  30%  { width: 40%; }
+  70%  { width: 75%; }
+  100% { width: 100%; }
+}
+
+/* Fade in from bottom */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Fade in from left */
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade in from right */
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Music button pulse */
+@keyframes musicPulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(196,151,79,0.35); }
+  50%       { box-shadow: 0 6px 36px rgba(196,151,79,0.6), 0 0 0 8px rgba(196,151,79,0.12); }
+}
+
+/* Music ring expand */
+@keyframes musicRing {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Toast notifications */
+@keyframes toastSlideIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes toastSlideOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(16px) scale(0.95); }
+}
+
+/* Petal fall */
+@keyframes petalFall {
+  0% {
+    transform: translateY(-60px) rotate(0deg) translateX(0px);
+    opacity: 0;
+  }
+  10% { opacity: 0.7; }
+  80% { opacity: 0.4; }
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(60px);
+    opacity: 0;
+  }
+}
+
+@keyframes petalSway {
+  0%   { margin-left: 0; }
+  25%  { margin-left: 40px; }
+  75%  { margin-left: -40px; }
+  100% { margin-left: 0; }
+}
+
+/* Cover content reveal */
+@keyframes coverReveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Timeline line draw */
+@keyframes drawLine {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+
+/* Hero ornament */
+@keyframes floatOrn {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Ripple on button */
+@keyframes ripple {
+  from { transform: scale(0); opacity: 0.5; }
+  to   { transform: scale(3); opacity: 0; }
+}
+
+/* Countdown flip */
+@keyframes flipIn {
+  from { transform: rotateX(-90deg); opacity: 0; }
+  to   { transform: rotateX(0deg);   opacity: 1; }
+}
+
+/* Spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Scroll indicator */
+@keyframes scrollWheel {
+  0%   { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+/* Gold shimmer on text */
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Heartbeat */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  20%       { transform: scale(1.15); }
+  40%       { transform: scale(1); }
+  60%       { transform: scale(1.1); }
+}
+
+
+/* ============================================================
+   COVER PAGE ANIMATIONS
+   ============================================================ */
+.reveal-cover {
+  opacity: 0;
+}
+
+.cover-section.open .reveal-cover {
+  animation: coverReveal 0.9s var(--ease-out) forwards;
+  animation-delay: 2.0s;
+}
+
+.cover-section.open .reveal-cover.delay-1 { animation-delay: 2.5s; }
+.cover-section.open .reveal-cover.delay-2 { animation-delay: 3.0s; }
+.cover-section.open .reveal-cover.delay-3 { animation-delay: 3.5s; }
+.cover-section.open .reveal-cover.delay-4 { animation-delay: 4.0s; }
+.cover-section.open .reveal-cover.delay-5 { animation-delay: 4.5s; }
+
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.delay-1 { transition-delay: 0.12s; }
+.reveal.delay-2 { transition-delay: 0.24s; }
+.reveal.delay-3 { transition-delay: 0.36s; }
+.reveal.delay-4 { transition-delay: 0.48s; }
+.reveal.delay-5 { transition-delay: 0.60s; }
+
+/* Timeline side variants */
+.timeline-item[data-side="left"] .timeline-content {
+  transition-delay: 0s;
+}
+
+.timeline-item[data-side="right"] .timeline-content {
+  transition-delay: 0.1s;
+}
+
+
+/* ============================================================
+   PARALLAX
+   ============================================================ */
+.hero-parallax-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  /* Disable fixed attachment on mobile for performance */
+  .hero-parallax-bg {
+    background-attachment: scroll;
+  }
+}
+
+
+/* ============================================================
+   PETALS ANIMATION
+   ============================================================ */
+#petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.petal {
+  position: absolute;
+  top: -60px;
+  border-radius: 50% 0 50% 0;
+  opacity: 0;
+  animation: petalFall linear infinite, petalSway ease-in-out infinite;
+}
+
+
+/* ============================================================
+   SECTION ENTRY ANIMATIONS
+   ============================================================ */
+
+/* Countdown cards stagger */
+.countdown-card:nth-child(1) { animation-delay: 0.0s; }
+.countdown-card:nth-child(2) { animation-delay: 0.1s; }
+.countdown-card:nth-child(3) { animation-delay: 0.2s; }
+.countdown-card:nth-child(4) { animation-delay: 0.3s; }
+
+/* Countdown number flip when value changes */
+.countdown-number.flipping {
+  animation: flipIn 0.3s ease;
+}
+
+/* Timeline dot heartbeat */
+.timeline-dot.active .fa-heart {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Spinner for wishes loading */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--cream-dark);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  margin: 0 auto 12px;
+}
+
+/* Gallery item hover */
+.gallery-item {
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.gallery-item:hover {
+  transform: scale(1.03) translateY(-4px);
+  z-index: 2;
+}
+
+/* Video play button pulse */
+.video-play-btn {
+  animation: musicPulse 2.5s ease-in-out infinite;
+}
+
+/* Couple photo ornament */
+.couple-photo-ornament {
+  animation: floatOrn 4s ease-in-out infinite;
+}
+
+/* Cover open button ripple */
+.cover-open-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.3);
+  transform: scale(0);
+  opacity: 0;
+}
+
+.cover-open-btn:active::before {
+  animation: ripple 0.4s ease;
+}
+
+
+/* ============================================================
+   HOVER STATE UTILITIES
+   ============================================================ */
+.hover-lift {
+  transition: transform var(--dur-base) var(--ease-spring),
+              box-shadow var(--dur-base) var(--ease);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-gold:hover { color: var(--gold); }

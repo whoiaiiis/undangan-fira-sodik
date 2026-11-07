@@ -1,0 +1,20 @@
+# Archives & Bundles
+*.zip
+*.tar.gz
+
+# Dependency directories
+node_modules/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary migration scripts
+append.js
+fix_index.js
+remove_sections.js
+replace_rgba.js
+revert_frame.js
+split_cards.js
+update_*.js

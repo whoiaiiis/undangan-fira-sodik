@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Undangan Pernikahan Digital Fira & Sodik - Sabtu, 31 Oktober 2026. Kehadiran Anda adalah suatu kehormatan bagi kami." />
+  <meta name="keywords" content="undangan pernikahan, wedding invitation, Fira, Sodik" />
+  <meta property="og:title" content="Undangan Pernikahan Fira & Sodik" />
+  <meta property="og:description" content="Sabtu, 31 Oktober 2026 — Kami memohon doa dan restu di hari bahagia kami." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://undangan-fira-sodik.vercel.app/" />
+  <meta property="og:image" content="https://undangan-fira-sodik.vercel.app/assets/images/preview-undangan.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Undangan pernikahan Fira & Sodik, Sabtu 31 Oktober 2026" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Undangan Pernikahan Fira & Sodik" />
+  <meta name="twitter:description" content="Sabtu, 31 Oktober 2026 — Kami memohon doa dan restu di hari bahagia kami." />
+  <meta name="twitter:image" content="https://undangan-fira-sodik.vercel.app/assets/images/preview-undangan.jpg" />
+  <title>Fira & Sodik — Wedding Invitation</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- ==============================
+       LOADING SCREEN
+  ============================== -->
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loading-content">
+      <div class="loading-logo">F &amp; S</div>
+      <div class="loading-text">Memuat Undangan...</div>
+      <div class="loading-bar"><div class="loading-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       PETAL CONTAINER
+  ============================== -->
+  <div id="petals-container" aria-hidden="true"></div>
+
+  <!-- ==============================
+       COVER / OPENING SECTION
+  ============================== -->
+  <section id="cover" class="cover-section">
+    <div class="cover-bg" style="background-image: url('assets/images/coverdepan.png')"></div>
+    <div class="cover-overlay"></div>
+    <div class="cover-content">
+      <div class="cover-top reveal-cover">
+        <div class="cover-ornament">✦ &nbsp;&nbsp; ✦ &nbsp;&nbsp; ✦</div>
+        <p class="cover-label font-script">The Wedding Of</p>
+      </div>
+      <div class="cover-names reveal-cover delay-1">
+        <h1 class="cover-names-text font-script">Fira &amp; Sodik</h1>
+      </div>
+      <div class="cover-date reveal-cover delay-2">
+        <p class="cover-date-text font-serif">Sabtu, 31 Oktober 2026</p>
+      </div>
+      <div class="cover-divider reveal-cover delay-3">
+        <span></span>
+        <i class="fa-solid fa-diamond"></i>
+        <span></span>
+      </div>
+      <div class="cover-guest reveal-cover delay-4">
+        <p class="cover-to-text font-sans">Kepada Yth. Bapak / Ibu / Saudara/i</p>
+        <p id="guest-name" class="cover-guest-name font-serif"><em>Tamu Undangan</em></p>
+      </div>
+      <div class="cover-btn-wrap reveal-cover delay-5">
+        <button id="open-invitation-btn" class="cover-open-btn" aria-label="Buka Undangan">
+          <span class="btn-icon"><i class="fa-regular fa-envelope-open"></i></span>
+          <span class="btn-text">Buka Undangan</span>
+        </button>
+      </div>
+    </div>
+    <!-- Scroll ornament -->
+    <div class="cover-scroll-hint" aria-hidden="true">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       MAIN CONTENT (revealed on btn click)
+  ============================== -->
+  <main id="main-content" class="main-content hidden">
+
+    <!-- Section Dots Navigation -->
+    <nav id="section-nav" aria-label="Section Navigation">
+      <button class="nav-dot active" data-target="hero" data-section="Beranda" aria-label="Ke Beranda"></button>
+      <button class="nav-dot" data-target="countdown" data-section="Countdown" aria-label="Ke Countdown"></button>
+      <button class="nav-dot" data-target="couple" data-section="Mempelai" aria-label="Ke Profil Mempelai"></button>
+      <button class="nav-dot" data-target="story" data-section="Kisah Cinta" aria-label="Ke Kisah Cinta"></button>
+      <button class="nav-dot" data-target="events" data-section="Acara" aria-label="Ke Detail Acara"></button>
+      <button class="nav-dot" data-target="rsvp" data-section="RSVP" aria-label="Ke RSVP"></button>
+      <button class="nav-dot" data-target="wishes" data-section="Ucapan" aria-label="Ke Ucapan"></button>
+      <button class="nav-dot" data-target="gift" data-section="Hadiah" aria-label="Ke Hadiah"></button>
+    </nav>
+
+    <!-- ============================
+         1. HERO SECTION
+    ============================ -->
+    <section id="hero" class="hero-section">
+      <div class="hero-parallax-bg" style="background-image: url('assets/images/bg.png')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-inner reveal">
+          <p class="hero-label font-script">Bismillahirrahmanirrahim</p>
+          <div class="hero-divider">
+            <span></span><i class="fa-solid fa-heart"></i><span></span>
+          </div>
+          <h2 class="hero-names font-script">Fira &amp; Sodik</h2>
+          <p class="hero-date font-serif">31 · 10 · 2026</p>
+          <blockquote class="hero-quote font-serif">
+            <em>"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya..."</em>
+            <cite>— QS. Ar-Rum: 21</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         2. COUNTDOWN SECTION
+    ============================ -->
+    <section id="countdown" class="countdown-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label font-script">Menghitung Hari</span>
+          <h2 class="section-title font-serif">Hari Bahagia Kami</h2>
+          <div class="section-divider"><span></span><i class="fa-solid fa-diamond divider-icon"></i><span></span></div>
+          <p class="section-desc">Sabtu, 31 Oktober 2026</p>
+        </div>
+        <div id="countdown-container" class="countdown-grid reveal delay-1">
+          <div class="countdown-card" id="cd-days">
+            <div class="countdown-number" id="days">00</div>
+            <div class="countdown-label">Hari</div>
+          </div>
+          <div class="countdown-sep" aria-hidden="true">:</div>
+          <div class="countdown-card" id="cd-hours">
+            <div class="countdown-number" id="hours">00</div>
+            <div class="countdown-label">Jam</div>
+          </div>
+          <div class="countdown-sep" aria-hidden="true">:</div>
+          <div class="countdown-card" id="cd-minutes">
+            <div class="countdown-number" id="minutes">00</div>
+            <div class="countdown-label">Menit</div>
+          </div>
+          <div class="countdown-sep" aria-hidden="true">:</div>
+          <div class="countdown-card" id="cd-seconds">
+            <div class="countdown-number" id="seconds">00</div>
+            <div class="countdown-label">Detik</div>
+          </div>
+        </div>
+        <p id="countdown-done" class="countdown-done font-serif hidden">Hari Bahagia Telah Tiba</p>
+      </div>
+      <div class="countdown-deco" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============================
+         3. BRIDE & GROOM PROFILE
+    ============================ -->
+    <section id="couple" class="couple-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label font-script">Mempelai</span>
+          <h2 class="section-title font-serif">Kedua Mempelai</h2>
+          <div class="section-divider"><span></span><i class="fa-solid fa-diamond divider-icon"></i><span></span></div>
+        </div>
+        <div class="couple-grid">
+          <!-- Bride -->
+          <div class="couple-card reveal delay-1">
+            <div class="couple-photo-wrap">
+              <div class="couple-photo-frame">
+                <img src="assets/images/fira.png" alt="Foto Fira - Mempelai Wanita" loading="lazy" />
+              </div>
+              <div class="couple-photo-ornament" aria-hidden="true"></div>
+            </div>
+            <div class="couple-info">
+              <p class="couple-role font-sans">Mempelai Wanita</p>
+              <h3 class="couple-name font-script">Fira</h3>
+              <p class="couple-fullname font-serif">Fira Agustin</p>
+              <p class="couple-parents font-sans">Putri dari<br /><strong>Bapak Asran</strong><br />&amp; <strong>Ibu Satri</strong></p>
+              <a href="https://instagram.com/fyaracnk" target="_blank" rel="noopener" class="couple-ig" aria-label="Instagram Fira">
+                <i class="fa-brands fa-instagram"></i> @fyaracnk
+              </a>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="couple-center reveal delay-2" aria-hidden="true">
+            <div class="couple-center-ring">
+              <i class="fa-solid fa-ring"></i>
+            </div>
+            <div class="couple-center-line"></div>
+          </div>
+
+          <!-- Groom -->
+          <div class="couple-card reveal delay-3">
+            <div class="couple-photo-wrap">
+              <div class="couple-photo-frame">
+                <img class="couple-photo--groom" src="assets/images/sodik.png" alt="Foto Sodik - Mempelai Pria" loading="lazy" />
+              </div>
+              <div class="couple-photo-ornament" aria-hidden="true"></div>
+            </div>
+            <div class="couple-info">
+              <p class="couple-role font-sans">Mempelai Pria</p>
+              <h3 class="couple-name font-script">Sodik</h3>
+              <p class="couple-fullname font-serif">Sodik Prastio</p>
+              <p class="couple-parents font-sans">Putra dari<br /><strong>Bapak Suilin</strong><br />&amp; <strong>Ibu Bakti Susanti</strong></p>
+              <a href="https://instagram.com/sodikprasatio" target="_blank" rel="noopener" class="couple-ig" aria-label="Instagram Sodik">
+                <i class="fa-brands fa-instagram"></i> @sodikprasatio
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         4. LOVE STORY TIMELINE
+    ============================ -->
+    <section id="story" class="story-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label font-script">Kisah Kita</span>
+          <h2 class="section-title font-serif">Perjalanan Cinta</h2>
+          <div class="section-divider"><span></span><i class="fa-solid fa-diamond divider-icon"></i><span></span></div>
+          <p class="section-desc">Perjalanan yang membawa kami pada satu tujuan yang sama.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <div class="timeline-item reveal" data-side="left">
+            <div class="timeline-content">
+              <div class="timeline-icon"><i class="fa-solid fa-mug-hot"></i></div>
+              <div class="timeline-card">
+                <span class="timeline-date">Maret 2025</span>
+                <h3 class="timeline-title font-serif">Pertemuan Pertama</h3>
+                <p class="timeline-desc">Pertemuan pertama yang tak terlupakan di bulan Maret 2025 — awal dari sebuah kisah cinta yang indah yang tak pernah kami bayangkan sebelumnya.</p>
+              </div>
+            </div>
+            <div class="timeline-dot" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+          </div>
+
+          <div class="timeline-item reveal delay-1" data-side="right">
+            <div class="timeline-content">
+              <div class="timeline-icon"><i class="fa-solid fa-star"></i></div>
+              <div class="timeline-card">
+                <span class="timeline-date">Juni 2025</span>
+                <h3 class="timeline-title font-serif">Mulai Bersama</h3>
+                <p class="timeline-desc">Sudah lebih dari 1 tahun kami berjalan bersama — saling menguatkan, saling memahami, dan semakin yakin bahwa ini adalah pilihan yang tepat.</p>
+              </div>
+            </div>
+            <div class="timeline-dot" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+          </div>
+
+          <div class="timeline-item reveal delay-2" data-side="left">
+            <div class="timeline-content">
+              <div class="timeline-icon"><i class="fa-solid fa-gem"></i></div>
+              <div class="timeline-card">
+                <span class="timeline-date">2025</span>
+                <h3 class="timeline-title font-serif">Pertunangan</h3>
+                <p class="timeline-desc">Momen ajaib di tahun 2025 — sebuah pertanyaan sederhana yang mengubah segalanya: <em>"Maukah kamu menikah denganku?"</em></p>
+              </div>
+            </div>
+            <div class="timeline-dot" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+          </div>
+
+          <div class="timeline-item reveal delay-3" data-side="right">
+            <div class="timeline-content">
+              <div class="timeline-icon"><i class="fa-solid fa-church"></i></div>
+              <div class="timeline-card">
+                <span class="timeline-date">31 Oktober 2026</span>
+                <h3 class="timeline-title font-serif">Hari Pernikahan</h3>
+                <p class="timeline-desc">Hari paling ditunggu — kami bersatu dalam ikatan suci pernikahan, menjadi keluarga baru yang diridhai Allah SWT.</p>
+              </div>
+            </div>
+            <div class="timeline-dot active" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         5. WEDDING EVENTS
+    ============================ -->
+    <section id="events" class="events-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label font-script">Undangan</span>
+          <h2 class="section-title font-serif">Detail Acara</h2>
+          <div class="section-divider"><span></span><i class="fa-solid fa-diamond divider-icon"></i><span></span></div>
+          <p class="section-desc">Kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami:</p>
+        </div>
+        <div class="events-grid">
+          <!-- Akad -->
+          <div class="event-card reveal delay-1">
+            <div class="event-card-header">
+              <div class="event-badge">
+                <i class="fa-solid fa-mosque"></i>
+              </div>
+              <h3 class="event-title font-serif">Akad Nikah</h3>
+            </div>
+            <div class="event-details">
+              <div class="event-detail-item">
+                <div class="event-detail-icon"><i class="fa-regular fa-calendar-days"></i></div>
+                <div>
+                  <p class="event-detail-label">Tanggal</p>
+                  <p class="event-detail-value font-serif">Jumat, 30 Oktober 2026</p>
+                </div>
+              </div>
+              <div class="event-detail-item">
+                <div class="event-detail-icon"><i class="fa-regular fa-clock"></i></div>
+                <div>
+                  <p class="event-detail-label">Waktu</p>
+                  <p class="event-detail-value font-serif">14.00 WIB — Selesai</p>
+                </div>
+              </div>
+              <div class="event-detail-item">
+                <div class="event-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <p class="event-detail-label">Lokasi</p>
+                  <p class="event-detail-value font-serif">Kediaman Mempelai Wanita</p>
+                  <p class="event-detail-address">Simpang Pulau Panggung Enim Kampung 4, Ds. Pulau Panggung Enim</p>
+                </div>
+              </div>
+            </div>
+            <div class="event-actions">
+              <a href="https://maps.google.com/?q=-3.826722,103.799417" target="_blank" rel="noopener" class="btn btn-primary" id="maps-akad">
+                <i class="fa-solid fa-map-location-dot"></i> Google Maps
+              </a>
+              <button class="btn btn-outline" onclick="addToCalendar('akad')" id="cal-akad">
+                <i class="fa-regular fa-calendar-plus"></i> Kalender
+              </button>
+            </div>
+          </div>
+
+          <!-- Resepsi -->
+          <div class="event-card reveal delay-2">
+            <div class="event-card-header">
+              <div class="event-badge">
+                <i class="fa-solid fa-champagne-glasses"></i>
+              </div>
+              <h3 class="event-title font-serif">Resepsi Pernikahan</h3>
+            </div>
+            <div class="event-details">
+              <div class="event-detail-item">
+                <div class="event-detail-icon"><i class="fa-regular fa-calendar-days"></i></div>
+                <div>
+                  <p class="event-detail-label">Tanggal</p>
+                  <p class="event-detail-value font-serif">Sabtu, 31 Oktober 2026</p>
+                </div>
+              </div>
+              <div class="event-detail-item">
+                <div class="event-detail-icon"><i class="fa-regular fa-clock"></i></div>
+                <div>
+                  <p class="event-detail-label">Waktu</p>
+                  <p class="event-detail-value font-serif">10.00 WIB — Selesai</p>
+                </div>
+              </div>
+              <div class="event-detail-item">
+                <div class="event-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <p class="event-detail-label">Lokasi</p>
+                  <p class="event-detail-value font-serif">Kediaman Mempelai Wanita</p>
+                  <p class="event-detail-address">Simpang Pulau Panggung Enim Kampung 4, Ds. Pulau Panggung Enim<br /><strong>Hiburan:</strong> Orgen Tunggal</p>
+                </div>
+              </div>
+            </div>
+            <div class="event-actions">
+              <a href="https://maps.google.com/?q=-3.826722,103.799417" target="_blank" rel="noopener" class="btn btn-primary" id="maps-resepsi">
+                <i class="fa-solid fa-map-location-dot"></i> Google Maps
+              </a>
+              <button class="btn btn-outline" onclick="addToCalendar('resepsi')" id="cal-resepsi">
+                <i class="fa-regular fa-calendar-plus"></i> Kalender
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         8. RSVP FORM
+    ============================ -->
+    <section id="rsvp" class="rsvp-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label font-script">Konfirmasi Kehadiran</span>
+          <h2 class="section-title font-serif">RSVP</h2>
+          <div class="section-divider"><span></span><i class="fa-solid fa-diamond divider-icon"></i><span></span></div>
+          <p class="section-desc">Untuk kenyamanan bersama, mohon konfirmasi kehadiran Anda selambat-lambatnya pada <strong>20 Oktober 2026</strong>.</p>
+        </div>
+        <div class="rsvp-card reveal delay-1">
+          <form id="rsvp-form" class="rsvp-form" novalidate>
+            <div class="form-group">
+              <label for="rsvp-name" class="form-label">Nama Lengkap <span class="required">*</span></label>
+              <input type="text" id="rsvp-name" name="name" class="form-input" placeholder="Masukkan nama lengkap Anda" required autocomplete="name" />
+              <span class="form-error" id="name-error"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Konfirmasi Kehadiran <span class="required">*</span></label>
+              <div class="rsvp-radio-group" role="radiogroup" aria-label="Status kehadiran">
+                <label class="radio-card" for="hadir">
+                  <input type="radio" id="hadir" name="status" value="hadir" required />
+                  <span class="radio-custom">
+                    <i class="fa-solid fa-check"></i>
+                    <span class="radio-text">Hadir</span>
+                  </span>
+                </label>
+                <label class="radio-card" for="tidak-hadir">
+                  <input type="radio" id="tidak-hadir" name="status" value="tidak_hadir" />
+                  <span class="radio-custom">
+                    <i class="fa-solid fa-xmark"></i>
+                    <span class="radio-text">Tidak Hadir</span>
+                  </span>
+                </label>
+              </div>
+              <span class="form-error" id="status-error"></span>
+            </div>
+            <div class="form-group" id="guests-group">
+              <label for="rsvp-guests" class="form-label">Jumlah Tamu</label>
+              <div class="number-input-wrap">
+                <button type="button" class="number-btn" id="guests-minus" aria-label="Kurangi jumlah tamu"><i class="fa-solid fa-minus"></i></button>
+                <input type="number" id="rsvp-guests" name="guests" class="form-input number-input" value="1" min="1" max="10" readonly />
+                <button type="button" class="number-btn" id="guests-plus" aria-label="Tambah jumlah tamu"><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rsvp-message" class="form-label">Ucapan &amp; Doa</label>
+              <textarea id="rsvp-message" name="message" class="form-input form-textarea" placeholder="Tuliskan ucapan dan doa terbaik Anda untuk kedua mempelai..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary rsvp-submit" id="rsvp-submit-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Kirim Konfirmasi</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         9. WEDDING WISHES
+    ============================ -->
+    <section id="wishes" class="wishes-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label font-script">Doa &amp; Harapan</span>
+          <h2 class="section-title font-serif">Ucapan Tamu</h2>
+          <div class="section-divider"><span></span><i class="fa-solid fa-diamond divider-icon"></i><span></span></div>
+          <p class="section-desc">Doa dan restu Anda sangat berarti bagi kami.</p>
+        </div>
+        <div class="wishes-wrapper reveal delay-1">
+          <div id="wishes-loading" class="wishes-loading">
+            <div class="spinner"></div>
+            <p>Memuat ucapan...</p>
+          </div>
+          <div id="wishes-list" class="wishes-list"></div>
+          <div id="wishes-empty" class="wishes-empty hidden">
+            <i class="fa-regular fa-comment-dots"></i>
+            <p class="font-serif">Jadilah yang pertama memberikan ucapan!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         10. WEDDING GIFT
+    ============================ -->
+    <section id="gift" class="gift-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label font-script">Wedding Gift</span>
+          <h2 class="section-title font-serif">Amplop Digital</h2>
+          <div class="section-divider"><span></span><i class="fa-solid fa-diamond divider-icon"></i><span></span></div>
+          <p class="section-desc">Tanpa mengurangi rasa hormat, bagi tamu yang ingin mengirimkan tanda kasih, dapat melalui tautan berikut:</p>
+        </div>
+        <div class="gift-grid reveal delay-1">
+          <!-- DANA -->
+          <div class="gift-card">
+            <div class="gift-bank-logo">
+              <div class="bank-icon dana"><span>DANA</span></div>
+            </div>
+            <div class="gift-info">
+              <p class="gift-bank-name font-serif">DANA</p>
+              <p class="gift-account-number" id="rekening-dana">088272866085</p>
+              <p class="gift-account-name">a.n. Fira Agustin</p>
+            </div>
+            <button class="btn btn-primary gift-copy-btn" onclick="copyRekening('rekening-dana', 'DANA')" id="copy-dana">
+              <i class="fa-regular fa-copy"></i> Salin Nomor
+            </button>
+          </div>
+
+          <!-- Physical Gift -->
+          <div class="gift-card gift-card-address">
+            <div class="gift-address-icon">
+              <i class="fa-solid fa-box-open"></i>
+            </div>
+            <div class="gift-info">
+              <p class="gift-bank-name font-serif">Pengiriman Fisik</p>
+              <p class="gift-address-text">Kediaman Mempelai Wanita<br />Simpang Pulau Panggung Enim Kampung 4<br />Ds. Pulau Panggung Enim</p>
+            </div>
+            <button class="btn btn-outline" onclick="copyAddress()" id="copy-address">
+              <i class="fa-regular fa-copy"></i> Salin Alamat
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         11. CLOSING SECTION
+    ============================ -->
+    <section id="closing" class="closing-section">
+      <div class="closing-bg" style="background-image: url('assets/images/bg.png')"></div>
+      <div class="closing-overlay"></div>
+      <div class="closing-content container">
+        <div class="closing-inner reveal">
+          <div class="closing-ornament" aria-hidden="true">✦ &nbsp; ✦ &nbsp; ✦</div>
+          <p class="closing-bismillah font-script">Jazakumullahu Khairan Katsiran</p>
+          <h2 class="closing-names font-script">Fira &amp; Sodik</h2>
+          <p class="closing-date font-serif">31 · 10 · 2026</p>
+          <div class="closing-divider" aria-hidden="true"><span></span><i class="fa-solid fa-heart"></i><span></span></div>
+          <p class="closing-thanks font-serif">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu. Atas kehadiran dan perhatiannya, kami ucapkan terima kasih.
+          </p>
+          <p class="closing-sign font-script">Hormat kami,<br />Fira &amp; Sodik</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <p class="footer-text font-sans">
+          Made with <i class="fa-solid fa-heart" style="color:var(--dusty-rose)"></i> for Fira &amp; Sodik
+          &nbsp;·&nbsp; 31 Oktober 2026
+        </p>
+        <p class="footer-credit font-sans">made by aisyah arianti</p>
+      </div>
+    </footer>
+
+  </main><!-- /main-content -->
+
+  <!-- ==============================
+       FLOATING ELEMENTS
+  ============================== -->
+  <!-- Music Button -->
+  <button id="music-btn" class="music-btn" aria-label="Toggle Background Music" title="Musik">
+    <div class="music-rings" aria-hidden="true"></div>
+    <i class="fa-solid fa-music" id="music-icon"></i>
+  </button>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Kembali ke atas">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ==============================
+       TOAST CONTAINER
+  ============================== -->
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ==============================
+       BACKGROUND AUDIO
+  ============================== -->
+  <audio id="bg-music" loop preload="none">
+    <!-- Wedding Harp by Francisco Alvear — Mixkit Stock Music Free License -->
+    <source src="assets/audio/wedding-harp.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ==============================
+       FIREBASE SDK (Compat)
+  ============================== -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- ==============================
+       APP SCRIPTS
+  ============================== -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/sheets-api.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
